@@ -1,0 +1,6 @@
+@RiverController_HostAddress = http://localhost:5195
+
+GET {{RiverController_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

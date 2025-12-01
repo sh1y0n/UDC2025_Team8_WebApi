@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\siyon\\source\\repos\\RiverController\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{806C0F96-12B5-43A1-B47D-C9D7C65CD8FB}|RiverController\\RiverController.csproj|c:\\users\\siyon\\source\\repos\\rivercontroller\\rivercontroller\\rivercontroller.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{806C0F96-12B5-43A1-B47D-C9D7C65CD8FB}|RiverController\\RiverController.csproj|solutionrelative:rivercontroller\\rivercontroller.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{806C0F96-12B5-43A1-B47D-C9D7C65CD8FB}|RiverController\\RiverController.csproj|c:\\users\\siyon\\source\\repos\\rivercontroller\\rivercontroller\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{806C0F96-12B5-43A1-B47D-C9D7C65CD8FB}|RiverController\\RiverController.csproj|solutionrelative:rivercontroller\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\siyon\\source\\repos\\RiverController\\RiverController\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "RiverController\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\siyon\\source\\repos\\RiverController\\RiverController\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "RiverController\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T02:40:48.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RiverController",
+              "DocumentMoniker": "C:\\Users\\siyon\\source\\repos\\RiverController\\RiverController\\RiverController.csproj",
+              "RelativeDocumentMoniker": "RiverController\\RiverController.csproj",
+              "ToolTip": "C:\\Users\\siyon\\source\\repos\\RiverController\\RiverController\\RiverController.csproj",
+              "RelativeToolTip": "RiverController\\RiverController.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-01T02:39:59.079Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
