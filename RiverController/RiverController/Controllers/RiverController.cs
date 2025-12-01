@@ -11,7 +11,7 @@ namespace RiverController.Controllers
     // APIのルート設定: [公開URL]/api/river でアクセス可能
     [ApiController]
     // [Route("api/[controller]")] //
-    [Route("api/getdata")]
+    //[Route("api/getdata")]//
     public class RiverController : ControllerBase
     {
         // Azureに登録した設定（接続文字列）を読み込むための変数
@@ -24,7 +24,7 @@ namespace RiverController.Controllers
         }
 
         // HTTP GETリクエストに対応するメソッド
-        [HttpGet]
+        [HttpGet("/")]
         public async Task<ActionResult<IEnumerable<RiverData>>> Get()
         {
             // 接続文字列 "DbConnection" をAzure App Serviceの環境設定から取得
