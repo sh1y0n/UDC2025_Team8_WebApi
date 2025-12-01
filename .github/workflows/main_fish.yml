@@ -7,58 +7,57 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: windows-latest
-    permissions:
-      contents: read
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: read
 
-    steps:
-      - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '10.x'
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
+      - name: Build with dotnet
+        run: dotnet build --configuration Release
+        working-directory: RiverController/RiverController
 
-        
-      - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+      - name: dotnet publish
+        run: dotnet publish -c Release -o "${{ env.DOTNET_ROOT }}/myapp"
+        working-directory: RiverController/RiverController
 
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: .net-app
+          path: ${{ env.DOTNET_ROOT }}/myapp
 
-      - name: Login to Azure
-        uses: azure/login@v2
-        with: 
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_4BFC1FEF237E404F8CC54A9C06629577 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_76A556BA3A1444019A5FB83E89B292E3 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C90192BC2DED43EAA7C641C5DF1C945C }}
+  deploy:
+    runs-on: windows-latest
+    needs: build
+    permissions:
+      id-token: write
+      contents: read
 
-  deploy:
-    runs-on: windows-latest
-    needs: build
-    permissions:
-      id-token: write
-      contents: read
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: .net-app
 
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: .net-app
-
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_4BFC1FEF237E404F8CC54A9C06629577 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_76A556BA3A1444019A5FB83E89B292E3 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C90192BC2DED43EAA7C641C5DF1C945C }}
 
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'Fish'
-          slot-name: 'Production'
-          package: .
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'Fish'
+          slot-name: 'Production'
+          package: .
