@@ -22,11 +22,11 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
-        working-directory: RiverController/RiverController # 👈 修正箇所
+
         
       - name: dotnet publish
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
-        working-directory: RiverController/RiverController # 👈 修正箇所
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -50,9 +50,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_4BFC1FEF237E404F8CC54A9C06629577 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_76A556BA3A1444019A5FB83E89B292E3 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C90192BC2DED43EAA7C641C5DF1C945C }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_4BFC1FEF237E404F8CC54A9C06629577 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_76A556BA3A1444019A5FB83E89B292E3 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C90192BC2DED43EAA7C641C5DF1C945C }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
