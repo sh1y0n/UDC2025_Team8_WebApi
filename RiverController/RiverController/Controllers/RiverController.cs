@@ -10,7 +10,8 @@ namespace RiverController.Controllers
 {
     // APIのルート設定: [公開URL]/api/river でアクセス可能
     [ApiController]
-    [Route("api/[controller]")]
+    // [Route("api/[controller]")] //
+    [Route("api/getdata")]
     public class RiverController : ControllerBase
     {
         // Azureに登録した設定（接続文字列）を読み込むための変数
