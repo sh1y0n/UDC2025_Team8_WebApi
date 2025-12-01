@@ -23,11 +23,11 @@ jobs:
         with:
           dotnet-version: '8.x'
 
-      - name: Build with dotnet
-        run: dotnet build UDC2025_Team8_WebApi/RiverController/RiverController.csproj --configuration Release
+      - name: Build solution
+        run: dotnet build RiverController/RiverController.sln --configuration Release
 
-      - name: dotnet publish
-        run: dotnet publish UDC2025_Team8_WebApi/RiverController/RiverController.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+      - name: Publish solution
+        run: dotnet publish RiverController/RiverController.sln -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
