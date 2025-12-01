@@ -27,7 +27,7 @@ namespace RiverController.Controllers
         public async Task<ActionResult<IEnumerable<RiverData>>> Get()
         {
             // 接続文字列 "DbConnection" をAzure App Serviceの環境設定から取得
-            string connectionString = _configuration.GetConnectionString("DbConnection");
+            string? connectionString = _configuration.GetConnectionString("DbConnection");
 
             // 接続文字列が見つからない場合はエラーを返す
             if (string.IsNullOrEmpty(connectionString))
